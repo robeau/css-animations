@@ -1,0 +1,322 @@
+@keyframes lightup {
+    0%, 79% {
+        background-color: #555555;
+    }
+    80%, 89% {
+        background-color: #bf3e31;
+    }
+
+    90%, 94% {
+        background-color: #555555;
+    }
+
+    95%, 100% {
+        background-color: #bf3e31;
+    }
+}
+@keyframes turndial {
+    0%, 19% {
+        height: 32px;
+        transform: rotate(-60deg) translate(4px, 11px);
+    }
+
+    20%, 39% {
+        height: 33px;
+        transform: rotate(-35deg) translate(16px, 6px);
+    }
+
+    40%, 59% {
+        height: 33px;
+        transform: rotate(0deg) translate(27px, -8px);
+    }
+
+    60%, 79% {
+        height: 33px;
+        transform: rotate(35deg) translate(28px, -25px);
+    }
+
+    80%, 100% {
+        height: 32px;
+        transform: rotate(60deg) translate(23px, -36px);
+    }
+}
+@keyframes shake {
+    0%, 79% {
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    80%, 82% {
+        top: -2px;
+        right: -2px;
+    }
+
+    83%, 84% {
+        top: -2px;
+        right: 0;
+        left: -2px;
+    }
+
+    85%, 89% {
+        top: 2px;
+        right: 2px;
+        left: 0;
+    }
+
+    90%, 92% {
+        top: -2px;
+        right: -2px;
+    }
+
+    93%, 94% {
+        top: -2px;
+        right: 0px;
+        left: -2px;
+    }
+
+    95%, 100% {
+        top: 2px;
+        right: 2px;
+    }
+}
+
+body {
+    font-family: "Courier New", Courier, monospace;
+    font-weight: bold;
+}
+#bg {
+    background-color: #6A7865;
+    width: 400px;
+    height: 300px;
+    overflow: hidden;
+}
+#panel {
+    position: relative;
+    margin: 45px auto 0 auto;
+    width: 340px;
+    height: 220px;
+    border-radius: 15px;
+    border: 3px solid #555555;
+    border-top: 3px solid #9DA896;
+    border-right: 3px solid #9DA896;
+    box-shadow: 0 0 0 3px black;
+    box-sizing: border-box;
+    animation-duration: 1.8s;
+    animation-name: shake;
+    animation-iteration-count: infinite;
+}
+[class$="-bolt"] {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: #555555;
+    margin: 7px;
+    box-shadow: -1px 1px 0 1px #9DA896, 1px -1px 0 1px #475543;
+    box-sizing: border-box;
+    display: inline-block;
+}
+[class^="right-"] {
+    float: right;
+}
+.bolt {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+.bolt div{
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+.plus {
+    position: relative;
+}
+[class^="plus-"] {
+    background-color: black;
+    border-radius: 1px;
+}
+.plus-horizontal {
+    width: 9px;
+    height: 3px;
+    position: absolute;
+    top: 4px;
+    left: 1px;
+}
+.plus-vertical {
+    width: 3px;
+    height: 9px;
+    position: absolute;
+    top: 1px;
+    left: 4px;
+}
+#face {
+    margin: 0 auto;
+    height: 160px;
+    width: 290px;
+    position: relative;
+    overflow: visible;
+}
+[id^="level-"] {
+    color: #253121;
+    position: absolute;
+}
+.tick {
+    width: 10px;
+    height: 16px;
+    background-color: #253121;
+    border-radius: 3px 3px 50% 50% / 20% 20% 80% 80%;
+}
+#label {
+    background-color: #6A7865;
+    position: absolute;
+    top: -125px;
+    right: 0;
+    left: 0;
+    margin: 30px auto 0 auto;
+    border-radius: 5px;
+    border: 2px solid #555555;
+    border-top: 2px solid #9DA896;
+    border-right: 2px solid #9DA896;
+    box-shadow: 0 0 0 3px black;
+    box-sizing: border-box;
+    height: 32px;
+    width: 110px;
+    color: #F7941F;
+    text-align: center;
+    font-size: 2em;
+    line-height: 1em;
+}
+#powerbar {
+    margin: 40px auto 0 auto;
+    width: 160px;
+    height: 160px;
+    position: relative;
+    border-radius: 50%;
+}
+[id^="arc"] {
+    overflow: hidden;
+    position: absolute;
+    top: -1em;
+    right: 50%;
+    bottom: 50%;
+    left: -1em;
+    transform-origin: 100% 100%;
+}
+[id^="arc"]:before {
+    box-sizing: border-box;
+    display: block;
+    border-radius: 50%;
+    content: '';
+}
+#arc1 {
+    transform: rotate(90deg) skewX(30deg);
+}
+#arc2 {
+    transform: rotate(30deg) skewX(5deg);
+}
+#arc1:before {
+    border: 28px solid #A18251;
+    width: 200%;
+    height: 200%;
+    transform: skewX(-30deg);
+}
+#arc2:before {
+    border: 28px solid #9DA896;
+    width: 200%;
+    height: 200%;
+    transform: skewX(-5deg);
+}
+#level-100 {
+    left: -40px;
+    top: 15px
+}
+#level-100 .tick {
+    transform: rotate(-55deg) translate(32px, 23px);
+}
+#level-500 {
+    left: -7px;
+    top: -20px
+}
+#level-500 .tick {
+    transform: rotate(-32deg) translate(33px, 14px);
+}
+#level-1000 {
+    left: 61px;
+    top: -40px
+}
+#level-1000 .tick {
+    transform: translate(13px, 1px);
+}
+#level-5000 {
+    left: 143px;
+    top: -20px;
+}
+#level-5000 .tick {
+    transform: rotate(32deg) translate(-22px, 7px);
+}
+#level-9000 {
+    left: 174px;
+    top: 15px;
+}
+#level-9000 .tick {
+    transform: rotate(55deg) translate(-23px, 10px);
+}
+#dial {
+    position: absolute;
+    background-color: #444444;
+    height: 75px;
+    width: 75px;
+    border-radius: 50%;
+    border: 8px solid #333333;
+    border-top: 8px solid #555555;
+    border-right: 8px solid #555555;
+    box-sizing: border-box;
+    left: 0;
+    right: 0;
+    margin: 30px auto 0 auto;
+    box-shadow: 0 0 0 5px black, -10px 20px 0 5px #475543;
+}
+#dial:before {
+    border: 6px dotted black;
+    border-radius: 50%;
+    content: "";
+    position: absolute;
+    top: -16px;
+    right: -16px;
+    bottom: -16px;
+    left: -16px;
+}
+#indicator {
+    position: absolute;
+    background-color: #F7941F;
+    border-radius: 5px;
+    width: 5px;
+    height: 32px;
+    border-top: 8px solid #ddb779;
+    transform: rotate(-60deg) translate(4px, 11px);
+    animation-duration: 1.8s;
+    animation-iteration-count: infinite;
+    animation-name: turndial;
+}
+.light {
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    border: 3px solid black;
+    background-color: #F7941F;
+    box-shadow: -1px 1px 0 1px #9DA896, 1px -1px 0 1px #475543;
+    box-sizing: border-box;
+    top: 70px;
+}
+.left {
+    left: -20px;
+}
+.right {
+    background-color: #555555;
+    right: -20px;
+    animation-duration: 1.8s;
+    animation-name: lightup;
+    animation-iteration-count: infinite;
+}
